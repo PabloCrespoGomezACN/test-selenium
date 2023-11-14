@@ -1,11 +1,5 @@
 print('Starting test ........')
 
-#!/usr/bin/python
-
-import openshift as oc
-print('OpenShift client version: {}'.format(oc.get_client_version()))
-print('OpenShift server version: {}'.format(oc.get_server_version()))
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
