@@ -24,4 +24,6 @@ def test_eight_components():
     value = message.text
     assert value == "Received!"
 
+    print(value)
+
     driver.quit()
