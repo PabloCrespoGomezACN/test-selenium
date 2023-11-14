@@ -1,13 +1,10 @@
 print('Starting test ........')
 
-import os
+#!/usr/bin/python
 
-virtenv = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
-virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-try:
-    execfile(virtualenv, dict(__file__=virtualenv))
-except IOError:
-    pass
+import openshift as oc
+print('OpenShift client version: {}'.format(oc.get_client_version()))
+print('OpenShift server version: {}'.format(oc.get_server_version()))
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
