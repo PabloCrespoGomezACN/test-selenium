@@ -1,28 +1,24 @@
-print('Starting test ........')
-
 from selenium import webdriver
-from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+from time import sleep
 
 
-driver = webdriver.Chrome()
+# Set options for not prompting DevTools information
+options = Options()
+options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
-driver.get("https://www.selenium.dev/selenium/web/web-form.html")
+print("testing started")
+driver = webdriver.Chrome(options=options)
+driver.get("https://www.saucedemo.com/")
+sleep(3)
 
+# Get page title
 title = driver.title
-assert title == "Web form"
 
-driver.implicitly_wait(0.5)
+# Test if title is correct
+assert "Swag Labs" in title
+print("TEST 0: `title` test passed")
 
-text_box = driver.find_element(by=By.NAME, value="my-text")
-submit_button = driver.find_element(by=By.CSS_SELECTOR, value="button")
-
-text_box.send_keys("Selenium")
-submit_button.click()
-
-message = driver.find_element(by=By.ID, value="message")
-value = message.text
-assert value == "Received!"
-
-print(value)
-
+# Close the driver
 driver.quit()
