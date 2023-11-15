@@ -1,3 +1,5 @@
+# src/test.py
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from time import sleep
@@ -7,8 +9,9 @@ options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 print("testing started")
-# Provide the full path to the ChromeDriver executable
-driver = webdriver.Chrome(executable_path="/usr/local/bin/chromedriver", options=options)
+
+# No need to provide executable_path, Selenium will search in the system's PATH
+driver = webdriver.Chrome(options=options)
 driver.get("https://www.saucedemo.com/")
 sleep(3)
 
