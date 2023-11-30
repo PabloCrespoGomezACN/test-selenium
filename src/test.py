@@ -21,9 +21,10 @@ def run_test():
     # driver.get("https://www.saucedemo.com/")
     # driver.get('${PARAM_APP_HOST_URL}')
 
-    # driver.get(f'https://app-{PARAM_PROJECT_NAMESPACE}.apps.{PARAM_OPC_CLUSTER_NAME}.acic-navan.com')
+    driver.get(f'https://app-{PARAM_PROJECT_NAMESPACE}.apps.{PARAM_OPC_CLUSTER_NAME}.acic-navan.com')
     
-    driver.get(PARAM_APP_HOST_URL)
+    # driver.get(PARAM_APP_HOST_URL)
+    
     sleep(3)
 
     # Get page title
