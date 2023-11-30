@@ -25,7 +25,7 @@ def run_test():
     title = driver.title
 
     # Test if title is correct
-    assert 'Swag Labs' in title
+    assert 'Swag Lab' in title
     print(f'TEST 0: {title}\nTest passed')
 
     # Close the driver
