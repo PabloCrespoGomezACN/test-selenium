@@ -14,4 +14,4 @@ subprocess.run(["apt-get", "install", "-y", "google-chrome-stable"])
 
 # Install Python dependencies
 subprocess.run(["pip", "install", "--upgrade", "pip"])
-# subprocess.run(["pip", "install", "selenium"])
+subprocess.run(["pip", "install", "selenium"])
