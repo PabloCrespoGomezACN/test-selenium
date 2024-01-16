@@ -16,7 +16,7 @@ options.add_argument('--no-sandbox')
 # driver = webdriver.Chrome(options=options)
 
 options = webdriver.Chrome(options=options)
-driver = webdriver.Remote(command_executor="http://localhost:4444", options=options)
+driver = webdriver.Remote(command_executor="http://172.30.178.107:4444", options=options)
 driver.get("https://www.saucedemo.com/")
 print(driver.title)
 driver.quit()
