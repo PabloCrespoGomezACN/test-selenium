@@ -40,7 +40,7 @@ def run_test():
 try:
     run_test()
     print('Testing was successful!')
-except AssertionError as e:
-    print(f'Testing failed: {str(e)}')
-except Exception as e:
-    print(f'An unexpected error occurred: {str(e)}')
+# except AssertionError as e:
+#    print(f'Testing failed: {str(e)}')
+# except Exception as e:
+#    print(f'An unexpected error occurred: {str(e)}')
