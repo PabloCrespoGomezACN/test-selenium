@@ -1,31 +1,19 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-# Replace with the URL of your Selenium Grid Hub
-grid_url = "https://selenium-hub-client-dev-pgoa-devops-namespace.apps.ocpairbgdev1.acic-navan.com/wd/hub"
+# Specify the URL of the Selenium Hub
+hub_url = "https://selenium-hub-client-dev-pgoa-devops-namespace.apps.ocpairbgdev1.acic-navan.com:4444/wd/hub"
 
-# Create a dictionary of desired capabilities
-desired_capabilities = {
-    "browserName": "chrome",
-    "version": "latest",
-    "platform": "ANY",
-    "name": "Your Test Name",
-}
+# Specify the desired capabilities for the browser (e.g., Chrome)
+desired_capabilities = DesiredCapabilities.CHROME.copy()
 
-# Create a WebDriver instance pointing to the Grid
-driver = webdriver.Remote(command_executor=grid_url, desired_capabilities=desired_capabilities)
+# Create a WebDriver instance pointing to the Selenium Hub
+driver = webdriver.Remote(command_executor=hub_url, desired_capabilities=desired_capabilities)
 
-try:
-    # Navigate to your web app
-    driver.get("https://www.saucedemo.com/")
+# Now, you can use 'driver' to interact with the Selenium Grid
+# For example:
+driver.get("https://www.saucedemo.com/")
+print(driver.title)
 
-    # Get page title
-    title = driver.title
-
-    # Test if title is correct
-    assert 'Swag Labs' in title
-    print(f'TEST 0: {title}\nTest passed')
-
-finally:
-    # Close the browser window
-    driver.quit()
+# Close the WebDriver session
+driver.quit()
