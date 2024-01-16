@@ -12,7 +12,7 @@ capabilities = {
 }
 
 # Set up the WebDriver with the specified capabilities
-driver = webdriver.Remote(command_executor=grid_url, desired_capabilities=capabilities)
+driver = webdriver.Remote(command_executor=grid_url, desired_capabilities={"browserName": "chrome", **capabilities})
 
 try:
     driver.get("https://www.saucedemo.com/")
