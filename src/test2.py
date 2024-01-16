@@ -16,8 +16,8 @@ chrome_options.add_argument('--no-sandbox')
 driver = webdriver.Chrome(options=chrome_options)
 
 # Use the Remote WebDriver to connect to the Selenium Grid Hub
-# Make sure to replace "http://172.30.178.107:4444" with your actual hub URL
-grid_url = "http://172.30.226.167:4444"
+# Make sure to replace "http://172.30.178.107:4444/wd/hub" with your actual hub URL
+grid_url = "http://172.30.226.167:4444/wd/hub"
 driver = webdriver.Remote(command_executor=grid_url, options=chrome_options)
 
 try:
