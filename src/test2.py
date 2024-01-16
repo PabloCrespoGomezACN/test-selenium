@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 # Specify the URL of the Selenium Hub
-hub_url = "https://selenium-hub-client-dev-pgoa-devops-namespace.apps.ocpairbgdev1.acic-navan.com"
+hub_url = "http://172.30.226.167:4444"
 
 # Specify the desired capabilities for the browser (e.g., Chrome)
 desired_capabilities = DesiredCapabilities.CHROME.copy()
