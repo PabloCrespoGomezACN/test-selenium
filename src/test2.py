@@ -10,12 +10,12 @@ def run_test():
     capabilities = DesiredCapabilities.CHROME.copy()
     capabilities['platform'] = 'LINUX'
 
-    # HOST_URL = "https://app-{{ devops_namespace }}.apps.{{ ocp_cluster_name }}.acic-navan.com/wd/hub"
+    HOST_URL = "https://app-{{ devops_namespace }}.apps.{{ ocp_cluster_name }}.acic-navan.com"
     # HOST_URL = "https://selenium-hub-client-dev-pgoa-devops-namespace.apps.ocpairbgdev1.acic-navan.com/ui"
 
     driver = webdriver.Remote(
-        # command_executor = HOST_URL,
-        command_executor = "https://selenium-hub-client-dev-pgoa-devops-namespace.apps.ocpairbgdev1.acic-navan.com/ui"
+        command_executor = HOST_URL
+        # command_executor = "https://selenium-hub-client-dev-pgoa-devops-namespace.apps.ocpairbgdev1.acic-navan.com/ui"
     )
     
     driver.get(APP_URL)
