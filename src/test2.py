@@ -18,8 +18,8 @@ def run_test():
     # HOST_URL = "https://app-{{ devops_namespace }}.apps.{{ ocp_cluster_name }}.acic-navan.com/wd/hub"
 
     driver = webdriver.Remote(
-        command_executor=HOST_URL,
-        desired_capabilities=capabilities
+        command_executor = HOST_URL,
+        desired_capabilities = capabilities
     )
     
     driver.get(APP_URL)
