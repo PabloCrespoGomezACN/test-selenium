@@ -17,7 +17,7 @@ driver = webdriver.Chrome(options=chrome_options)
 
 # Use the Remote WebDriver to connect to the Selenium Grid Hub
 # Make sure to replace "http://172.30.178.107:4444" with your actual hub URL
-grid_url = "http://172.30.178.107:4444"
+grid_url = "http://172.30.178.107:5555"
 driver = webdriver.Remote(command_executor=grid_url, options=chrome_options)
 
 try:
