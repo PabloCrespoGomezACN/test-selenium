@@ -9,7 +9,7 @@ chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
 
 # Specify the URL of the Selenium Grid Hub
-grid_url = "http://172.30.178.107:4444/wd/hub"
+grid_url = "http://172.30.226.167:4444/wd/hub"
 
 # Create capabilities with browser version
 capabilities = {
