@@ -15,7 +15,7 @@ options.add_argument('--no-sandbox')
 # No need to provide executable_path, Selenium will search in the system's PATH
 # driver = webdriver.Chrome(options=options)
 
-options = webdriver.Chrome()
+options = webdriver.Chrome(options=options)
 driver = webdriver.Remote(command_executor="http://localhost:4444", options=options)
 driver.get("https://www.saucedemo.com/")
 print(driver.title)
