@@ -7,13 +7,8 @@ from values import HOST_URL
 def run_test():
     print('TESTING STARTED')
 
-    capabilities = {
-        'browserName': 'chrome',
-        'platform': 'LINUX',
-        'goog:chromeOptions': {
-            'args': ['--headless', '--disable-gpu', '--no-sandbox']
-        }
-    }
+    capabilities = DesiredCapabilities.CHROME.copy()
+    capabilities['platform'] = 'LINUX'
 
     # HOST_URL = "https://app-{{ devops_namespace }}.apps.{{ ocp_cluster_name }}.acic-navan.com/wd/hub"
 
