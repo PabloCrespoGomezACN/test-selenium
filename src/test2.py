@@ -7,16 +7,21 @@ from time import sleep
 
 print('TESTING STARTED')
 
-options = Options()
-options.add_argument('--headless')
-options.add_argument('--disable-gpu')
-options.add_argument('--no-sandbox')
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--no-sandbox')
 
-# No need to provide executable_path, Selenium will search in the system's PATH
-# driver = webdriver.Chrome(options=options)
+# Create a Chrome WebDriver instance with the specified options
+driver = webdriver.Chrome(options=chrome_options)
 
-options = webdriver.Chrome(options=options)
-driver = webdriver.Remote(command_executor="http://172.30.178.107:4444")
-driver.get("https://www.saucedemo.com/")
-print(driver.title)
-driver.quit()
+# Use the Remote WebDriver to connect to the Selenium Grid Hub
+# Make sure to replace "http://172.30.178.107:4444" with your actual hub URL
+grid_url = "http://172.30.178.107:4444/wd/hub"
+driver = webdriver.Remote(command_executor=grid_url, options=chrome_options)
+
+try:
+    driver.get("https://www.saucedemo.com/")
+    print(driver.title)
+finally:
+    driver.quit()
