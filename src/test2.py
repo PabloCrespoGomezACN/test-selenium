@@ -1,7 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from time import sleep
-from values import APP_URL, HOST_URL
+from values import APP_URL
+from values import HOST_URL
 
 def run_test():
     print('TESTING STARTED')
