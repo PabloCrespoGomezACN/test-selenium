@@ -8,7 +8,7 @@ hub_url = "https://selenium-hub-client-dev-pgoa-devops-namespace.apps.ocpairbgde
 desired_capabilities = DesiredCapabilities.CHROME.copy()
 
 # Create a WebDriver instance pointing to the Selenium Hub
-driver = webdriver.Remote(command_executor=hub_url, desired_capabilities=desired_capabilities)
+driver = webdriver.Remote(command_executor=hub_url, options=webdriver.ChromeOptions(), desired_capabilities=desired_capabilities)
 
 # Now, you can use 'driver' to interact with the Selenium Grid
 # For example:
