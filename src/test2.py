@@ -11,6 +11,7 @@ def run_test():
     capabilities['platform'] = 'LINUX'
 
     # HOST_URL = "https://app-{{ devops_namespace }}.apps.{{ ocp_cluster_name }}.acic-navan.com/wd/hub"
+    HOST_URL = "https://selenium-hub-client-dev-pgoa-devops-namespace.apps.ocpairbgdev1.acic-navan.com/ui"
 
     driver = webdriver.Remote(
         command_executor = HOST_URL,
