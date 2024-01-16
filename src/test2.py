@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from time import sleep
-from values import APP_URL
+from values import APP_URL, HOST_URL
 
 def run_test():
     print('TESTING STARTED')
@@ -14,7 +14,7 @@ def run_test():
         }
     }
 
-    HOST_URL = "https://app-{{ devops_namespace }}.apps.{{ ocp_cluster_name }}.acic-navan.com/wd/hub"
+    # HOST_URL = "https://app-{{ devops_namespace }}.apps.{{ ocp_cluster_name }}.acic-navan.com/wd/hub"
 
     driver = webdriver.Remote(
         command_executor=HOST_URL,
