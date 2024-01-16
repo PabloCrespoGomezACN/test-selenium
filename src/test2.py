@@ -14,10 +14,10 @@ def run_test():
         }
     }
 
-    grid_url = "https://app-{{ devops_namespace }}.apps.{{ ocp_cluster_name }}.acic-navan.com/wd/hub"
+    HOST_URL = "https://app-{{ devops_namespace }}.apps.{{ ocp_cluster_name }}.acic-navan.com/wd/hub"
 
     driver = webdriver.Remote(
-        command_executor=grid_url,
+        command_executor=HOST_URL,
         desired_capabilities=capabilities
     )
     
