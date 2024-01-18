@@ -3,7 +3,7 @@ from selenium import webdriver
 print('TESTING STARTED')
 
 # Specify the URL of the Selenium Grid Hub
-grid_url = "http://172.30.226.167:4444/wd/hub"
+grid_url = "http://172.30.226.167:5555/wd/hub"
 
 # Create capabilities with browser version
 capabilities = {
